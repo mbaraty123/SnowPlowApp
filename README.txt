@@ -27,6 +27,7 @@ Breakdown:
 			- Can recieve completed jobs
 
 Stretch Goals:
+	- Payment
 	- Sign-in for app
 	- Other properties for flags
 		- "Need complete by", "Priority", "Payment"
