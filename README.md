@@ -1,5 +1,6 @@
-# SnowPlowApp
-## By Michael Baraty and Kyle Hannibal
+# OPEN IN RAW; ALL THE FORMATTING GOT MESSED UP
+## Snow Plow App
+#### By Michael Baraty and Kyle Hannibal
 
 Breakdown:
 	Frontend:
