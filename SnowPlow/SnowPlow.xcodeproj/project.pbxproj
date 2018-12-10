@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		313C3273A16E07EC4DFA434E /* Pods_SnowPlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83D1D34CB28CC2BA3FC0A6BD /* Pods_SnowPlow.framework */; };
 		846F893E21BEF51A0077EDE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F893D21BEF51A0077EDE1 /* AppDelegate.swift */; };
 		846F894021BEF51A0077EDE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F893F21BEF51A0077EDE1 /* ViewController.swift */; };
 		846F894321BEF51A0077EDE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846F894121BEF51A0077EDE1 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		83D1D34CB28CC2BA3FC0A6BD /* Pods_SnowPlow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnowPlow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		846F893A21BEF51A0077EDE1 /* SnowPlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnowPlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		846F893D21BEF51A0077EDE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		846F893F21BEF51A0077EDE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		846F894421BEF51B0077EDE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		846F894721BEF51B0077EDE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		846F894921BEF51C0077EDE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A95E811FA658488435F5190 /* Pods-SnowPlow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowPlow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnowPlow/Pods-SnowPlow.debug.xcconfig"; sourceTree = "<group>"; };
+		F25241A61542B5711FDE4473 /* Pods-SnowPlow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowPlow.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnowPlow/Pods-SnowPlow.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				313C3273A16E07EC4DFA434E /* Pods_SnowPlow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		486747766D62EEBD0FA81D40 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A95E811FA658488435F5190 /* Pods-SnowPlow.debug.xcconfig */,
+				F25241A61542B5711FDE4473 /* Pods-SnowPlow.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		637300A0D64307228BAF7375 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83D1D34CB28CC2BA3FC0A6BD /* Pods_SnowPlow.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		846F893121BEF51A0077EDE1 = {
 			isa = PBXGroup;
 			children = (
 				846F893C21BEF51A0077EDE1 /* SnowPlow */,
 				846F893B21BEF51A0077EDE1 /* Products */,
+				486747766D62EEBD0FA81D40 /* Pods */,
+				637300A0D64307228BAF7375 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 846F894C21BEF51C0077EDE1 /* Build configuration list for PBXNativeTarget "SnowPlow" */;
 			buildPhases = (
+				CA3E31EC90B53677B29D08E2 /* [CP] Check Pods Manifest.lock */,
 				846F893621BEF51A0077EDE1 /* Sources */,
 				846F893721BEF51A0077EDE1 /* Frameworks */,
 				846F893821BEF51A0077EDE1 /* Resources */,
+				6CF150218E7E0E5DF82412EF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6CF150218E7E0E5DF82412EF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SnowPlow/Pods-SnowPlow-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnowPlow/Pods-SnowPlow-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA3E31EC90B53677B29D08E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SnowPlow-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		846F893621BEF51A0077EDE1 /* Sources */ = {
@@ -280,6 +355,7 @@
 		};
 		846F894D21BEF51C0077EDE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A95E811FA658488435F5190 /* Pods-SnowPlow.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -301,6 +377,7 @@
 		};
 		846F894E21BEF51C0077EDE1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F25241A61542B5711FDE4473 /* Pods-SnowPlow.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
