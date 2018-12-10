@@ -1,14 +1,14 @@
 # SnowPlowApp
-# By Michael Baraty and Kyle Hannibal
+## By Michael Baraty and Kyle Hannibal
 
 Breakdown:
 	Frontend:
 		- Select customer/plow user
-			Customer:
+			- Customer:
 				- Request service
 					- Collect Location
 					- Extra information
-			Plow User:
+			- Plow User:
 				- Recieve jobs
 				- Format jobs for User
 				- Must be able to tap on flags and see additional information
