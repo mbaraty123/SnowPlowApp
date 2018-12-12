@@ -6,6 +6,6 @@ target 'SnowPlow' do
   use_frameworks!
   
   # Pods for SnowPlow
-  pod 'Parse'
+
   
 end
