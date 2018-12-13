@@ -16,7 +16,7 @@ class UserMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     @IBOutlet weak var mapView: MKMapView!
     var locationManager = CLLocationManager()
     var userRegion: MKCoordinateRegion?
-    
+    var jobs: [Job]?
 
     
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class UserMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         } else {
             print("Please turn on Location Services or GPS")
         }
-            mapView.region = userRegion ?? MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -42, longitude: 36), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+            mapView.region = userRegion ?? MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -42, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
         
         currentLocation()
     }
@@ -60,9 +60,6 @@ class UserMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     func currentLocation() {
         mapView.region = userRegion ?? MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 0, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
-        //let annotation = MKPointAnnotation()
-       // annotation.coordinate = locationManager.location?.coordinate ?? MKLoca
-        //mapView.addAnnotation(MKUserLocation())
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -76,30 +73,16 @@ class UserMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
                 
                 let placemark = placemarks?.first
                 
-                let annotation = MKPointAnnotation()
-                annotation.coordinate = (placemark?.location?.coordinate)!
-                annotation.title = self.searchBarMap.text!
+                let anno = MKPointAnnotation()
+                anno.coordinate = (placemark?.location?.coordinate)!
+                anno.title = self.searchBarMap.text!
                 
                 let span = MKCoordinateSpan(latitudeDelta: 0.075, longitudeDelta: 0.075)
-                let region = MKCoordinateRegion(center: annotation.coordinate, span: span)
+                let region = MKCoordinateRegion(center: anno.coordinate, span: span)
                 
                 self.mapView.setRegion(region, animated: true)
-                guard annotation is Job else { return }
-                // 3
-                let identifier = "marker"
-                var view: MKMarkerAnnotationView
-                // 4
-                if let dequeuedView = self.mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-                    as? MKMarkerAnnotationView {
-                    dequeuedView.annotation = annotation
-                    view = dequeuedView
-                } else {
-                    // 5
-                    view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-                    view.canShowCallout = true
-                    view.calloutOffset = CGPoint(x: -5, y: 5)
-                    view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-                }
+                self.mapView.addAnnotation(anno)
+                self.mapView.selectAnnotation(anno, animated: true)
                 
                 
                 
@@ -112,30 +95,4 @@ class UserMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     }
     
     
-    
 }
-
-extension UserMapViewController {
-    // 1
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        // 2
-        guard let annotation = annotation as? Job else { return nil }
-        // 3
-        let identifier = "marker"
-        var view: MKMarkerAnnotationView
-        // 4
-        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-            as? MKMarkerAnnotationView {
-            dequeuedView.annotation = annotation
-            view = dequeuedView
-        } else {
-            // 5
-            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            view.canShowCallout = true
-            view.calloutOffset = CGPoint(x: -5, y: 5)
-            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-        }
-        return view
-    }
-}
-
