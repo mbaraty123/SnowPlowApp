@@ -13,30 +13,30 @@
         <!--LogInViewController-->
         <scene sceneID="VgJ-e9-m8A">
             <objects>
-                <viewController title="LogInViewController" id="C5t-0B-69S" customClass="LogInViewController" customModule="SnowPlow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogInViewController" title="LogInViewController" id="C5t-0B-69S" customClass="LogInViewController" customModule="SnowPlow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yox-C0-JkO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fgv-TA-DMF">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fgv-TA-DMF">
                                 <rect key="frame" x="20" y="50" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mCw-iF-vLS">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mCw-iF-vLS">
                                 <rect key="frame" x="20" y="100" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8D4-oH-476">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8D4-oH-476">
                                 <rect key="frame" x="20" y="220" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Us3-Dc-qUM">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Us3-Dc-qUM">
                                 <rect key="frame" x="20" y="270" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -127,7 +127,7 @@
                                 <rect key="frame" x="20" y="597" width="335" height="50"/>
                                 <state key="normal" title="Log Out"/>
                                 <connections>
-                                    <action selector="logoutOfApp:" destination="gLE-bf-PHJ" eventType="touchUpInside" id="fpM-Wp-bZL"/>
+                                    <action selector="logoutOfApp:" destination="gLE-bf-PHJ" eventType="touchUpInside" id="oLI-zv-yKs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -166,15 +166,18 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SV-k0-43h">
-                                <rect key="frame" x="260" y="623" width="115" height="44"/>
+                                <rect key="frame" x="260" y="617" width="115" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="b2j-I7-hhe"/>
+                                </constraints>
                                 <state key="normal" title="Current Location"/>
                                 <connections>
                                     <action selector="currentLocationTapped:" destination="ysD-rU-mXX" eventType="touchUpInside" id="AaG-Or-Lr0"/>
                                 </connections>
                             </button>
                             <searchBar contentMode="redraw" placeholder="Search for a location" translatesAutoresizingMaskIntoConstraints="NO" id="g2q-3F-qyy">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="53"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -189,8 +192,8 @@
                             <constraint firstItem="Tpb-ei-zvO" firstAttribute="top" secondItem="71B-SN-KBf" secondAttribute="top" id="LsY-KT-zoL"/>
                             <constraint firstItem="g2q-3F-qyy" firstAttribute="top" secondItem="71B-SN-KBf" secondAttribute="top" id="Qhm-IQ-UJS"/>
                             <constraint firstItem="g2q-3F-qyy" firstAttribute="leading" secondItem="71B-SN-KBf" secondAttribute="leading" id="YuU-LK-4nO"/>
-                            <constraint firstItem="0SV-k0-43h" firstAttribute="top" secondItem="71B-SN-KBf" secondAttribute="top" constant="559" id="aL9-5O-6pZ"/>
                             <constraint firstItem="0SV-k0-43h" firstAttribute="trailing" secondItem="Tpb-ei-zvO" secondAttribute="trailing" id="eqb-3E-nKS"/>
+                            <constraint firstItem="0SV-k0-43h" firstAttribute="top" secondItem="g2q-3F-qyy" secondAttribute="bottom" constant="500" id="y1e-vF-buj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="71B-SN-KBf"/>
                     </view>
