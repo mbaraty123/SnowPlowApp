@@ -13,16 +13,16 @@ class UserMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     @IBOutlet weak var searchBarMap: UISearchBar!
     @IBOutlet weak var currentLocationButton: UIButton!
+    @IBOutlet weak var setLocationButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     var locationManager = CLLocationManager()
     var userRegion: MKCoordinateRegion?
-    var jobs: [Job]?
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currentLocationButton.layer.cornerRadius = 10
+        currentLocationButton.layer.cornerRadius = 1
+        setLocationButton.layer.cornerRadius = 1
         
         searchBarMap.delegate = self
         
@@ -30,7 +30,7 @@ class UserMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         if CLLocationManager.locationServicesEnabled() == true {
             if CLLocationManager.authorizationStatus() == .restricted || CLLocationManager.authorizationStatus() == .denied || CLLocationManager.authorizationStatus() == .notDetermined {
-                locationManager.requestWhenInUseAuthorization()
+                locationManager.requestAlwaysAuthorization()
             }
             
             locationManager.desiredAccuracy = 1.0
@@ -40,15 +40,15 @@ class UserMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         } else {
             print("Please turn on Location Services or GPS")
         }
-            mapView.region = userRegion ?? MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -42, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
+            mapView.region = userRegion ?? MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.581343, longitude: -70.952681), span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
         
         currentLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         userRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude), span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
-       
     }
+    
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Unable to access your current location")
@@ -59,7 +59,7 @@ class UserMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     }
     
     func currentLocation() {
-        mapView.region = userRegion ?? MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 0, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
+        mapView.region = userRegion ?? MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.581343, longitude: -70.952681), span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -92,6 +92,9 @@ class UserMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             
         }
 
+    }
+    @IBAction func setLocationTapped(_ sender: UIButton) {
+        
     }
     
     
