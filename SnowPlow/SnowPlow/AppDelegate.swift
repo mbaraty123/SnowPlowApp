@@ -8,6 +8,8 @@
 
 import UIKit
 import Parse
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             $0.server = "https://parseapi.back4app.com"
         }
         Parse.initialize(with: configuration)
+        GMSServices.provideAPIKey("AIzaSyD39-LxDgG2UrWdEU3DvTIcD8TPH-Eb328")
         return true
     }
 

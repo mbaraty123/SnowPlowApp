@@ -72,23 +72,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Dh-PM-rjO">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="mutedStandard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tpb-ei-zvO">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SV-k0-43h">
+                                <rect key="frame" x="260" y="623" width="115" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Current Location"/>
+                                <connections>
+                                    <action selector="currentLocationTapped:" destination="ysD-rU-mXX" eventType="touchUpInside" id="AaG-Or-Lr0"/>
+                                </connections>
+                            </button>
+                            <searchBar contentMode="redraw" placeholder="Search for a location" translatesAutoresizingMaskIntoConstraints="NO" id="g2q-3F-qyy">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="71B-SN-KBf" firstAttribute="bottom" secondItem="9Dh-PM-rjO" secondAttribute="bottom" id="3PZ-Sh-7g5"/>
-                            <constraint firstItem="71B-SN-KBf" firstAttribute="trailing" secondItem="9Dh-PM-rjO" secondAttribute="trailing" id="JSp-ll-9hj"/>
-                            <constraint firstItem="9Dh-PM-rjO" firstAttribute="top" secondItem="71B-SN-KBf" secondAttribute="top" id="MnP-jX-9GG"/>
-                            <constraint firstItem="9Dh-PM-rjO" firstAttribute="leading" secondItem="71B-SN-KBf" secondAttribute="leading" id="sWx-f5-5e0"/>
+                            <constraint firstItem="71B-SN-KBf" firstAttribute="bottom" secondItem="Tpb-ei-zvO" secondAttribute="bottom" id="6kh-Nl-zOE"/>
+                            <constraint firstItem="g2q-3F-qyy" firstAttribute="trailing" secondItem="71B-SN-KBf" secondAttribute="trailing" id="7fs-Vf-25V"/>
+                            <constraint firstItem="71B-SN-KBf" firstAttribute="trailing" secondItem="Tpb-ei-zvO" secondAttribute="trailing" id="9CJ-hc-Pzv"/>
+                            <constraint firstItem="Tpb-ei-zvO" firstAttribute="leading" secondItem="71B-SN-KBf" secondAttribute="leading" id="A8E-km-qbg"/>
+                            <constraint firstItem="0SV-k0-43h" firstAttribute="bottom" secondItem="71B-SN-KBf" secondAttribute="bottom" id="Gmw-6p-g7o"/>
+                            <constraint firstItem="0SV-k0-43h" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="71B-SN-KBf" secondAttribute="leading" symbolic="YES" id="KiH-X6-6nM"/>
+                            <constraint firstItem="Tpb-ei-zvO" firstAttribute="top" secondItem="71B-SN-KBf" secondAttribute="top" id="LsY-KT-zoL"/>
+                            <constraint firstItem="g2q-3F-qyy" firstAttribute="top" secondItem="71B-SN-KBf" secondAttribute="top" id="Qhm-IQ-UJS"/>
+                            <constraint firstItem="g2q-3F-qyy" firstAttribute="leading" secondItem="71B-SN-KBf" secondAttribute="leading" id="YuU-LK-4nO"/>
+                            <constraint firstItem="0SV-k0-43h" firstAttribute="top" secondItem="71B-SN-KBf" secondAttribute="top" constant="559" id="aL9-5O-6pZ"/>
+                            <constraint firstItem="0SV-k0-43h" firstAttribute="trailing" secondItem="Tpb-ei-zvO" secondAttribute="trailing" id="eqb-3E-nKS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="71B-SN-KBf"/>
                     </view>
+                    <connections>
+                        <outlet property="currentLocationButton" destination="0SV-k0-43h" id="uY4-Gx-3gM"/>
+                        <outlet property="mapView" destination="Tpb-ei-zvO" id="hrh-y2-cpG"/>
+                        <outlet property="searchBarMap" destination="g2q-3F-qyy" id="jzU-OK-b2v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qeW-Se-XJ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1993" y="134"/>
+            <point key="canvasLocation" x="1992.8" y="133.5832083958021"/>
         </scene>
         <!--Plow Map View Controller-->
         <scene sceneID="iQN-7y-ERf">
