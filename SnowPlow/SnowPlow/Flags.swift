@@ -6,7 +6,7 @@
 //  Copyright © 2018 Baraty Hannibal Enterprises. All rights reserved.
 //
 
-import Foundation
+/*import Foundation
 import Parse
 
 class Flags: NSObject {
@@ -27,4 +27,4 @@ class Flags: NSObject {
         }
     }
 
-}
+}*/
