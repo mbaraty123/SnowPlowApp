@@ -38,10 +38,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 Copyright 2018 Google
 
-## GooglePlacePicker
-
-Copyright 2018 Google
-
 ## GooglePlaces
 
 Copyright 2018 Google

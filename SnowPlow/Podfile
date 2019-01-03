@@ -7,8 +7,7 @@ target 'SnowPlow' do
 
   # Pods for SnowPlow
   pod 'Parse'
-  pod 'GooglePlaces'
-  pod 'GooglePlacePicker'
   pod 'GoogleMaps'
+  pod 'GooglePlaces'
   
 end

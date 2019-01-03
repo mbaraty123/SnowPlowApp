@@ -34,6 +34,11 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>googlechromes</string>
+		<string>comgooglemaps</string>
+	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>App wants to access your location</string>
 </dict>

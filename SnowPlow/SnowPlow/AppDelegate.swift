@@ -24,7 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             $0.server = "https://parseapi.back4app.com"
         }
         Parse.initialize(with: configuration)
+        
         GMSServices.provideAPIKey("AIzaSyD39-LxDgG2UrWdEU3DvTIcD8TPH-Eb328")
+        GMSPlacesClient.provideAPIKey("AIzaSyD39-LxDgG2UrWdEU3DvTIcD8TPH-Eb328")
+        
         return true
     }
 
