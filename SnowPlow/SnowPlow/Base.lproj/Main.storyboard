@@ -331,12 +331,15 @@
         <scene sceneID="iQN-7y-ERf">
             <objects>
                 <viewController id="kck-iA-XEa" customClass="PlowMapViewController" customModule="SnowPlow" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="61b-Ns-Icm">
+                    <view key="view" contentMode="scaleToFill" id="61b-Ns-Icm" customClass="GMSMapView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8XZ-tB-7N2"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="61b-Ns-Icm" id="0lV-NF-EhK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zxO-Hv-yzP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
