@@ -6,96 +6,39 @@
 //
 
 import UIKit
-import CoreLocation
-import MapKit
+import GoogleMaps
+import Parse
 
-class UserMapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate {
+class UserMapViewController: UIViewController, CLLocationManagerDelegate {
     
-    @IBOutlet weak var searchBarMap: UISearchBar!
-    @IBOutlet weak var currentLocationButton: UIButton!
-    @IBOutlet weak var setLocationButton: UIButton!
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet fileprivate weak var mapView: GMSMapView!
+    
     var locationManager = CLLocationManager()
-    var userRegion: MKCoordinateRegion?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currentLocationButton.layer.cornerRadius = 1
-        setLocationButton.layer.cornerRadius = 1
+        let userLat = locationManager.location?.coordinate.latitude
+        let userLong = locationManager.location?.coordinate.longitude
+        let camera = GMSCameraPosition.camera(withLatitude: userLat ?? 42.581343, longitude: userLong ?? -70.952681 , zoom: 17)
+        mapView?.camera = camera
+        mapView?.isMyLocationEnabled = true
+        mapView?.settings.myLocationButton = true
         
-        searchBarMap.delegate = self
         
-        mapView.showsUserLocation = true
-        
-        if CLLocationManager.locationServicesEnabled() == true {
-            if CLLocationManager.authorizationStatus() == .restricted || CLLocationManager.authorizationStatus() == .denied || CLLocationManager.authorizationStatus() == .notDetermined {
-                locationManager.requestAlwaysAuthorization()
-            }
-            
-            locationManager.desiredAccuracy = 1.0
-            locationManager.delegate = self
-            locationManager.startUpdatingLocation()
-            
-        } else {
-            print("Please turn on Location Services or GPS")
-        }
-            mapView.region = userRegion ?? MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.581343, longitude: -70.952681), span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
-        
-        currentLocation()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        userRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude), span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
+        //Flags().createFlag(payment: 20.98, size: 400.2)
+        //let flagList = Flags().receiveFlags()
+        //print(flagList)
     }
     
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Unable to access your current location")
-    }
-
-    @IBAction func currentLocationTapped(_ sender: UIButton) {
-        currentLocation()
-    }
     
-    func currentLocation() {
-        mapView.region = userRegion ?? MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.581343, longitude: -70.952681), span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
+    func showMarker(latitude: CLLocationDegrees, longitude: CLLocationDegrees){
+        let marker = GMSMarker()
+        let position = CLLocationCoordinate2D.init(latitude: latitude, longitude: longitude)
+        marker.position = position
+        marker.map = mapView
+        marker.isDraggable = true
     }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBarMap.resignFirstResponder()
-        
-        searchBarMap.resignFirstResponder()
-        
-        let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString(searchBarMap.text!) { (placemarks:[CLPlacemark]?, error:Error?) in
-            if error == nil {
-                
-                let placemark = placemarks?.first
-                
-                let anno = MKPointAnnotation()
-                anno.coordinate = (placemark?.location?.coordinate)!
-                anno.title = self.searchBarMap.text!
-                
-                let span = MKCoordinateSpan(latitudeDelta: 0.075, longitudeDelta: 0.075)
-                let region = MKCoordinateRegion(center: anno.coordinate, span: span)
-                
-                self.mapView.setRegion(region, animated: true)
-                self.mapView.addAnnotation(anno)
-                self.mapView.selectAnnotation(anno, animated: true)
-                
-                
-                
-            }else{
-                print(error?.localizedDescription ?? "error")
-            }
-            
-        }
-
-    }
-    @IBAction func setLocationTapped(_ sender: UIButton) {
-        
-    }
-    
-    
 }

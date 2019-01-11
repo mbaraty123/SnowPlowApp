@@ -7,13 +7,9 @@
 //
 
 import Foundation
+import Parse
+import CoreLocation
 
-struct GPS: Hashable {
-    let lat: Double?
-    let long: Double?
+class GPS {
     
-    init(latitude: Double, longitude: Double) {
-        self.lat = latitude
-        self.long = longitude
-    }
 }

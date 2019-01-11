@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7F0EBC3256CE1D7CDE91BD12 /* Pods_SnowPlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B16260549A6C24E08687258F /* Pods_SnowPlow.framework */; };
-		8401A89421DE6BDE009F6D06 /* MapMarkerWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401A89321DE6BDE009F6D06 /* MapMarkerWindow.swift */; };
 		8485A46221DCF21F00E67EDF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8485A46121DCF21F00E67EDF /* MapKit.framework */; };
 		848ED36221C1742700BEE124 /* SelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848ED36121C1742700BEE124 /* SelectorViewController.swift */; };
 		848ED36621C1A2CB00BEE124 /* PlowMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848ED36521C1A2CB00BEE124 /* PlowMapViewController.swift */; };
@@ -27,7 +26,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8401A89321DE6BDE009F6D06 /* MapMarkerWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMarkerWindow.swift; sourceTree = "<group>"; };
 		8485A46121DCF21F00E67EDF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		848ED36121C1742700BEE124 /* SelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorViewController.swift; sourceTree = "<group>"; };
 		848ED36521C1A2CB00BEE124 /* PlowMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlowMapViewController.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				84C0A87221C2CFA20002F47C /* Flags.swift */,
 				84CB486621E4F20700B4A12C /* GPS.swift */,
 				84F1449E21C15FA90032DD4F /* Main.storyboard */,
-				8401A89321DE6BDE009F6D06 /* MapMarkerWindow.swift */,
 				848ED37121C1ED3400BEE124 /* LogInViewController.swift */,
 				84C0A87021C2B6770002F47C /* UserFormViewController.swift */,
 				848ED36121C1742700BEE124 /* SelectorViewController.swift */,
@@ -274,7 +271,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8401A89421DE6BDE009F6D06 /* MapMarkerWindow.swift in Sources */,
 				84F1449D21C15FA90032DD4F /* ViewController.swift in Sources */,
 				84CB486721E4F20700B4A12C /* GPS.swift in Sources */,
 				848ED36221C1742700BEE124 /* SelectorViewController.swift in Sources */,

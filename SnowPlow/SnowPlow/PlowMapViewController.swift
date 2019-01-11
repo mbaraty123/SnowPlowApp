@@ -18,29 +18,49 @@ class PlowMapViewController: UIViewController, CLLocationManagerDelegate {
     
         override func viewDidLoad() {
             super.viewDidLoad()
-            let camera = GMSCameraPosition.camera(withLatitude: 37.36, longitude: -122.0, zoom: 6.0)
+            let userLat = locationManager.location?.coordinate.latitude
+            let userLong = locationManager.location?.coordinate.longitude
+            let camera = GMSCameraPosition.camera(withLatitude: userLat ?? 42.581343, longitude: userLong ?? -70.952681 , zoom: 17)
             mapView.camera = camera
-            showMarker(position: camera.target)
             mapView.isMyLocationEnabled = true
             mapView.settings.myLocationButton = true
+            showMarkers()
             
-            Flags().createFlag(payment: 20.98, size: 400.2)
+            //Flags().createFlag(payment: 20.98, size: 400.2)
             //let flagList = Flags().receiveFlags()
             //print(flagList)
         }
     
-    /*func currentLocation() -> CLLocationCoordinate2D{
-        
-        return CLLocationCoordinate2D(latitude: 0, longitude: 0)
-    }*/
     
-    func showMarker(position: CLLocationCoordinate2D){
-            let marker = GMSMarker()
-            marker.position = position
-            
-            marker.map = mapView
+    
+    func showMarker(position: CLLocationCoordinate2D, title: String, price: Double){
+        let marker = GMSMarker()
+        marker.position = position
+        marker.title = title
+        marker.snippet = "$ \(price)"
+        marker.map = mapView
         }
+    
+    
+    func showMarkers() {
+        let flagList = Flags().receiveFlags()
+        print(flagList)
+        print("printed flaglist inside of PMVC!")
+        var lat = 0.0
+        var long = 0.0
+        
+        for dict in flagList {
+            for item in dict.keys{
+                lat = dict[item]!.latitude
+                long = dict[item]!.longitude
+            }
+            let coord = CLLocationCoordinate2DMake(lat, long)
+            
+            showMarker(position: coord, title: "TITLE", price: 9.99)
+        }
+        print("Complete!")
     }
+}
     extension PlowMapViewController: GMSMapViewDelegate{
         
         //MARK - GMSMarker Dragging
