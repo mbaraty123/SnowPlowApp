@@ -14,7 +14,7 @@ class UserMapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet fileprivate weak var mapView: GMSMapView!
     
 
-    
+    var marker = GMSMarker()
 
     
     var locationManager = CLLocationManager()
@@ -30,13 +30,12 @@ class UserMapViewController: UIViewController, CLLocationManagerDelegate {
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
         mapView.settings.compassButton = true
-        let marker = showMarker(latitude: locationManager.location?.coordinate.latitude ?? 42.581343, longitude: locationManager.location?.coordinate.longitude ?? -70.952681)
-        let markerPos = marker.position
+        self.marker = showMarker(latitude: userLat ?? 42.581343, longitude: userLong ?? -70.952681)
         //Flags().createFlag(payment: 20.98, size: 400.2)
         //let flagList = Flags().receiveFlags()
         //print(flagList)
     }
-    
+    //let markerPos = self.marker.position
     
     
     func showMarker(latitude: CLLocationDegrees, longitude: CLLocationDegrees) -> GMSMarker{

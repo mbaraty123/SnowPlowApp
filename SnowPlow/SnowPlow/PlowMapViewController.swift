@@ -33,11 +33,11 @@ class PlowMapViewController: UIViewController, CLLocationManagerDelegate {
     
     
     
-    func showMarker(position: CLLocationCoordinate2D, title: String, price: Double){
+    func showMarker(position: CLLocationCoordinate2D, title: Double, price: Double){
         let marker = GMSMarker()
         marker.position = position
-        marker.title = title
-        marker.snippet = "$ \(price)"
+        marker.title = "\(title) approx. sq. ft."
+        marker.snippet = "$\(price)"
         marker.map = mapView
         }
     
@@ -51,13 +51,26 @@ class PlowMapViewController: UIViewController, CLLocationManagerDelegate {
         for dict in flagList {
             for item in dict.keys{
                 let coord = GPS().PFGeotoClLocation(location: dict[item]!)
-                showMarker(position: coord, title: "TITLE", price: 9.99)
+                
+                let query = PFQuery(className: "Flags")
+                do{
+                    let object = try query.getObjectWithId(item)
+                   // if !(object["accepted"] != nil) {
+                    showMarker(position: coord, title: object["Size"] as! Double, price: object["Payment"] as! Double)
+                    //}
+                } catch {
+                    print("error!")
+                    //need to add more than this later
+                }
+                
+                
                 print("Dict item \(coord)")
             }
         }
         print("Complete!")
     }
 }
+
     extension PlowMapViewController: GMSMapViewDelegate{
         
         //MARK - GMSMarker Dragging
