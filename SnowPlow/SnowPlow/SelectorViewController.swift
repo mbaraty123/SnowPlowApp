@@ -9,8 +9,9 @@
 import UIKit
 import Parse
 
-class SelectorViewController: UIViewController {
+class SelectorViewController: UIViewController, CLLocationManagerDelegate {
     
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var userOptionButton: UIButton!
     @IBOutlet weak var plowOptionButton: UIButton!
@@ -20,6 +21,19 @@ class SelectorViewController: UIViewController {
         userOptionButton.layer.cornerRadius = 60
         plowOptionButton.layer.cornerRadius = 60
         // Do any additional setup after loading the view.
+        
+        if CLLocationManager.locationServicesEnabled() == true {
+            if CLLocationManager.authorizationStatus() == .restricted || CLLocationManager.authorizationStatus() == .denied || CLLocationManager.authorizationStatus() == .notDetermined {
+                locationManager.requestWhenInUseAuthorization()
+            }
+            
+            locationManager.desiredAccuracy = 1.0
+            locationManager.delegate = self
+            locationManager.startUpdatingLocation()
+            
+        } else {
+            print("Please turn on Location Services or GPS")
+        }
     }
     
     func loadLoginScreen(){

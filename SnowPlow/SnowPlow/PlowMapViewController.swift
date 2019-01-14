@@ -20,7 +20,7 @@ class PlowMapViewController: UIViewController, CLLocationManagerDelegate {
             super.viewDidLoad()
             let userLat = locationManager.location?.coordinate.latitude
             let userLong = locationManager.location?.coordinate.longitude
-            let camera = GMSCameraPosition.camera(withLatitude: userLat ?? 42.581343, longitude: userLong ?? -70.952681 , zoom: 17)
+            let camera = GMSCameraPosition.camera(withLatitude: userLat ?? 42.581343, longitude: userLong ?? -70.952681 , zoom: 14)
             mapView.camera = camera
             mapView.isMyLocationEnabled = true
             mapView.settings.myLocationButton = true
@@ -46,17 +46,14 @@ class PlowMapViewController: UIViewController, CLLocationManagerDelegate {
         let flagList = Flags().receiveFlags()
         print(flagList)
         print("printed flaglist inside of PMVC!")
-        var lat = 0.0
-        var long = 0.0
+        
         
         for dict in flagList {
             for item in dict.keys{
-                lat = dict[item]!.latitude
-                long = dict[item]!.longitude
+                let coord = GPS().PFGeotoClLocation(location: dict[item]!)
+                showMarker(position: coord, title: "TITLE", price: 9.99)
+                print("Dict item \(coord)")
             }
-            let coord = CLLocationCoordinate2DMake(lat, long)
-            
-            showMarker(position: coord, title: "TITLE", price: 9.99)
         }
         print("Complete!")
     }

@@ -12,4 +12,13 @@ import CoreLocation
 
 class GPS {
     
+    func CLlocationtoPFGeo(location: CLLocationCoordinate2D) -> PFGeoPoint{
+        return PFGeoPoint(latitude: location.latitude, longitude: location.longitude)
+    }
+    
+    func PFGeotoClLocation(location: PFGeoPoint) -> CLLocationCoordinate2D{
+        return CLLocationCoordinate2DMake(location.latitude, location.longitude)
+    }
+    
 }
+

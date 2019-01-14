@@ -5,7 +5,6 @@
 //  Created by Michael Baraty on 12/13/18.
 //  Copyright © 2018 Baraty Hannibal Enterprises. All rights reserved.
 //
-
 import Foundation
 import Parse
 
@@ -16,7 +15,7 @@ class Flags: NSObject {
     func createFlag(payment: Double, size: Double){
         let myFlag = PFObject(className: "Flags")
         
-        myFlag["GPS"] = PFGeoPoint(latitude:89.0, longitude:38.0)
+        myFlag["GPS"] = PFGeoPoint(latitude:42.6792, longitude:70.8412)
         myFlag["Payment"] = payment
         myFlag["Size"] = size
         myFlag["complete"] = false
@@ -48,26 +47,49 @@ class Flags: NSObject {
                 //WHY THE HELL DOES FLAGLIST EXIST HERE, BUT CLEARS ITSELF WHEN RETURNED????
                 //Everything else works, GPS class needs rework.
             }
-
+            
         } catch {
             print("error!")
             //need to add more than this later
         }
-        print("no error code; proceeding")
-        print(flagList)
-        print("Printed flaglist inside of Recieveflags")
         return flagList
-                        }
-
+    }
     
-    func markAsComplete() {
-        let query = PFQuery(className: "Flag")
-        query.getObjectInBackground(withId: "MYOBJECTID") { (object, error) -> Void in
-            if object != nil && error == nil{
-                object!["complete"] = true
-                object?.saveInBackground()
-                //Delete line to be added ehre?
+    
+    func markAsComplete(objid: String) {
+        let query = PFQuery(className: "Flags")
+        
+        do{
+            let object = try query.getObjectWithId(objid)
+            object["complete"] = true
+            do{
+                try object.save()
+            } catch {
+                print("error! markascomplete save")
+                //need to add more than this later
             }
+        } catch {
+            print("error! Markascomplete get")
+            //need to add more than this later
+        }
+    }
+    
+    func markAsAccepted(objid: String) {
+        let query = PFQuery(className: "Flags")
+        
+        do{
+            let object = try query.getObjectWithId(objid)
+            object["accepted"] = true
+            do{
+                try object.save()
+            } catch {
+                print("error! markasaccept save")
+                print(error)
+                //need to add more than this later
+            }
+        } catch {
+            print("error! Markasaccept get")
+            //need to add more than this later
         }
     }
     

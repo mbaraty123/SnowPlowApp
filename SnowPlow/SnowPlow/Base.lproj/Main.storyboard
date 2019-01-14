@@ -158,12 +158,22 @@
         <scene sceneID="323-jq-wN8">
             <objects>
                 <viewController id="kXI-pO-cvw" customClass="UserMapViewController" customModule="SnowPlow" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FNA-u4-P7m">
+                    <view key="view" contentMode="scaleToFill" id="FNA-u4-P7m" userLabel="mapView" customClass="GMSMapView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pL-Gd-q5g">
+                                <rect key="frame" x="313" y="617" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="V4I-7C-Vok"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="FNA-u4-P7m" id="YlM-pI-MyJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJY-Gi-iN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
