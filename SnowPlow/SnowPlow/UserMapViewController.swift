@@ -12,13 +12,18 @@ import Parse
 class UserMapViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet fileprivate weak var mapView: GMSMapView!
-    
 
     var marker = GMSMarker()
 
     
     var locationManager = CLLocationManager()
+    
 
+    @IBAction func selectLocationButtonTapped(_ sender: UIBarButtonItem) {
+
+        performSegue(withIdentifier: "UserMapToForm", sender: nil)
+                print("button worked")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +35,16 @@ class UserMapViewController: UIViewController, CLLocationManagerDelegate {
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
         mapView.settings.compassButton = true
-        self.marker = showMarker(latitude: userLat ?? 42.581343, longitude: userLong ?? -70.952681)
+        //self.marker = showMarker(latitude: userLat ?? 42.581343, longitude: userLong ?? -70.952681)
+        marker.position = CLLocationCoordinate2D(latitude: userLat ?? 42.581343, longitude: userLong ?? -70.952681)
+        marker.map = mapView
+        marker.isDraggable = true
+        marker.icon = UIImage(named: "userMarkerIcon")
         //Flags().createFlag(payment: 20.98, size: 400.2)
         //let flagList = Flags().receiveFlags()
         //print(flagList)
     }
-    //let markerPos = self.marker.position
+   // let markerPos = marker.position
     
     
     func showMarker(latitude: CLLocationDegrees, longitude: CLLocationDegrees) -> GMSMarker{

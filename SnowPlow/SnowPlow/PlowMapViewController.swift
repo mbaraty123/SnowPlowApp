@@ -24,6 +24,7 @@ class PlowMapViewController: UIViewController, CLLocationManagerDelegate {
             mapView.camera = camera
             mapView.isMyLocationEnabled = true
             mapView.settings.myLocationButton = true
+            mapView.settings.compassButton = true
             showMarkers()
             
             //Flags().createFlag(payment: 20.98, size: 400.2)
@@ -55,9 +56,9 @@ class PlowMapViewController: UIViewController, CLLocationManagerDelegate {
                 let query = PFQuery(className: "Flags")
                 do{
                     let object = try query.getObjectWithId(item)
-                   // if !(object["accepted"] != nil) {
+                    if (object["accepted"] as! Bool == false) {
                     showMarker(position: coord, title: object["Size"] as! Double, price: object["Payment"] as! Double)
-                    //}
+                    }
                 } catch {
                     print("error!")
                     //need to add more than this later

@@ -12,10 +12,10 @@ class Flags: NSObject {
     
     var flagList: Array = [Dictionary<String, PFGeoPoint>]()
     
-    func createFlag(payment: Double, size: Double){
+    func createFlag(payment: Double, size: Double, location: CLLocationCoordinate2D){
         let myFlag = PFObject(className: "Flags")
         
-        myFlag["GPS"] = PFGeoPoint(latitude:42.6792, longitude:70.8412)
+        myFlag["GPS"] = GPS().CLlocationtoPFGeo(location: location)
         myFlag["Payment"] = payment
         myFlag["Size"] = size
         myFlag["complete"] = false

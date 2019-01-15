@@ -1,17 +1,23 @@
 //
-//  UserFormViewController.swift
+//  MarkAsCompletedViewController.swift
 //  SnowPlow
 //
-//  Created by Michael Baraty on 12/13/18.
-//  Copyright © 2018 Baraty Hannibal Enterprises. All rights reserved.
+//  Created by Michael Baraty on 1/14/19.
+//  Copyright © 2019 Baraty Hannibal Enterprises. All rights reserved.
 //
 
 import UIKit
 
-class UserFormViewController: UIViewController {
+class MarkAsCompletedViewController: UIViewController {
 
+    @IBOutlet weak var completedButton: UIButton!
+    @IBAction func completedButtonTapped(_ sender: UIButton) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        completedButton.layer.cornerRadius = 180
 
         // Do any additional setup after loading the view.
     }
