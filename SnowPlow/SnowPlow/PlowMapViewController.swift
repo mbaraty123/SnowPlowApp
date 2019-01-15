@@ -10,19 +10,16 @@ import UIKit
 import GoogleMaps
 import Parse
 
-class PlowMapViewController: UIViewController, CLLocationManagerDelegate {
+class PlowMapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     
     @IBOutlet fileprivate weak var mapView: GMSMapView!
 
     var locationManager = CLLocationManager()
-    var tappedMarker : GMSMarker?
-    var customInfoWindow : ViewInfoWindow?
     
         override func viewDidLoad() {
             super.viewDidLoad()
             
-            self.tappedMarker = GMSMarker()
-            self.customInfoWindow = ViewInfoWindow().loadView()
+            mapView.delegate = self
             
             let userLat = locationManager.location?.coordinate.latitude
             let userLong = locationManager.location?.coordinate.longitude
@@ -31,19 +28,21 @@ class PlowMapViewController: UIViewController, CLLocationManagerDelegate {
             mapView.isMyLocationEnabled = true
             mapView.settings.myLocationButton = true
             mapView.settings.compassButton = true
-            showMarkers()
             
-            //Flags().createFlag(payment: 20.98, size: 400.2)
-            //let flagList = Flags().receiveFlags()
-            //print(flagList)
+            updateUI()
+           
         }
+    
+    func updateUI() {
+        showMarkers()
+    }
     
     func showMarker(position: CLLocationCoordinate2D, title: Double, price: Double, id: String){
         
         let marker = GMSMarker()
         marker.position = position
-        marker.title = "\(title) approx. sq. ft."
-        marker.snippet = "$\(price)"
+        marker.title = "\(title) approx. sq. ft. for $\(price)"
+        marker.snippet = id
         marker.map = mapView
         marker.infoWindowAnchor = CGPoint(x: 0.5, y: 0.2)
         }
@@ -77,28 +76,13 @@ class PlowMapViewController: UIViewController, CLLocationManagerDelegate {
         print("Complete!")
     }
     
-    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        return false
-    }
-    
-    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
-        return self.customInfoWindow
-    }
-    
 }
 
-    extension PlowMapViewController: GMSMapViewDelegate{
-        
-        //MARK - GMSMarker Dragging
-        func mapView(_ mapView: GMSMapView, didBeginDragging marker: GMSMarker) {
-            print("didBeginDragging")
-        }
-        func mapView(_ mapView: GMSMapView, didDrag marker: GMSMarker) {
-            print("didDrag")
-        }
-        func mapView(_ mapView: GMSMapView, didEndDragging marker: GMSMarker) {
-            print("didEndDragging")
-        }
-        
-        
+extension PlowMapViewController {
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        print("info window was tapped")
+        global.setObjIDJob(id: marker.snippet!)
+        performSegue(withIdentifier: "PlowMapToComplete", sender: nil)
+    }
+    
 }

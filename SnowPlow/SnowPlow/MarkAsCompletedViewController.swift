@@ -12,12 +12,15 @@ class MarkAsCompletedViewController: UIViewController {
 
     @IBOutlet weak var completedButton: UIButton!
     @IBAction func completedButtonTapped(_ sender: UIButton) {
-        
+        Flags().markAsComplete(objid: global.objIDJob)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        completedButton.layer.cornerRadius = 180
+        Flags().markAsAccepted(objid: global.objIDJob)
+        
+        completedButton.layer.cornerRadius = 120
+        
 
         // Do any additional setup after loading the view.
     }

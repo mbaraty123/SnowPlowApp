@@ -355,7 +355,7 @@
                     <navigationItem key="navigationItem" id="VTL-yL-OES"/>
                     <connections>
                         <outlet property="mapView" destination="61b-Ns-Icm" id="0lV-NF-EhK"/>
-                        <segue destination="5qV-Pw-uhF" kind="show" id="zfW-l0-jhk"/>
+                        <segue destination="5qV-Pw-uhF" kind="show" identifier="PlowMapToComplete" id="zfW-l0-jhk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zxO-Hv-yzP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -382,6 +382,7 @@
                                 </state>
                                 <connections>
                                     <action selector="completedButtonTapped:" destination="5qV-Pw-uhF" eventType="touchUpInside" id="c5n-6S-GKy"/>
+                                    <segue destination="kck-iA-XEa" kind="presentation" id="qYL-aW-IXH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -439,4 +440,7 @@
             <point key="canvasLocation" x="4684" y="110.19490254872565"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="qYL-aW-IXH"/>
+    </inferredMetricsTieBreakers>
 </document>

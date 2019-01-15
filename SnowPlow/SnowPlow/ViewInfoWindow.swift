@@ -33,7 +33,7 @@ class ViewInfoWindow: UIView {
         }
         
         func loadView() -> ViewInfoWindow{
-            let customInfoWindow = Bundle.main.loadNibNamed("CustomInfoWindow", owner: self, options: nil)?[0] as! ViewInfoWindow
+            let customInfoWindow = Bundle.main.loadNibNamed("ViewInfoWindow", owner: self, options: nil)?[0] as! ViewInfoWindow
             return customInfoWindow
         }
     }
