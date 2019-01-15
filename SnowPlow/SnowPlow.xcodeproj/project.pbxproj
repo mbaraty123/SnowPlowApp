@@ -11,6 +11,7 @@
 		845F151821EA207900E7B4E5 /* Style.json in Resources */ = {isa = PBXBuildFile; fileRef = 845F151721EA207900E7B4E5 /* Style.json */; };
 		845F151C21ECFD9900E7B4E5 /* UserFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F151B21ECFD9800E7B4E5 /* UserFormTableViewController.swift */; };
 		845F151E21ED5FD200E7B4E5 /* MarkAsCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F151D21ED5FD200E7B4E5 /* MarkAsCompletedViewController.swift */; };
+		845F152021EE4BDF00E7B4E5 /* UserJobsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F151F21EE4BDF00E7B4E5 /* UserJobsTableTableViewController.swift */; };
 		8485A46221DCF21F00E67EDF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8485A46121DCF21F00E67EDF /* MapKit.framework */; };
 		848ED36221C1742700BEE124 /* SelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848ED36121C1742700BEE124 /* SelectorViewController.swift */; };
 		848ED36621C1A2CB00BEE124 /* PlowMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848ED36521C1A2CB00BEE124 /* PlowMapViewController.swift */; };
@@ -31,6 +32,7 @@
 		845F151721EA207900E7B4E5 /* Style.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Style.json; sourceTree = "<group>"; };
 		845F151B21ECFD9800E7B4E5 /* UserFormTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserFormTableViewController.swift; path = /Users/mbaraty/Documents/GitHub/SnowPlowApp/SnowPlow/SnowPlow/UserFormTableViewController.swift; sourceTree = "<absolute>"; };
 		845F151D21ED5FD200E7B4E5 /* MarkAsCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkAsCompletedViewController.swift; sourceTree = "<group>"; };
+		845F151F21EE4BDF00E7B4E5 /* UserJobsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserJobsTableTableViewController.swift; sourceTree = "<group>"; };
 		8485A46121DCF21F00E67EDF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		848ED36121C1742700BEE124 /* SelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorViewController.swift; sourceTree = "<group>"; };
 		848ED36521C1A2CB00BEE124 /* PlowMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlowMapViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				845F151B21ECFD9800E7B4E5 /* UserFormTableViewController.swift */,
 				84F1449C21C15FA90032DD4F /* ViewController.swift */,
 				84C0A87221C2CFA20002F47C /* Flags.swift */,
+				845F151F21EE4BDF00E7B4E5 /* UserJobsTableTableViewController.swift */,
 				84CB486621E4F20700B4A12C /* GPS.swift */,
 				84F1449E21C15FA90032DD4F /* Main.storyboard */,
 				845F151D21ED5FD200E7B4E5 /* MarkAsCompletedViewController.swift */,
@@ -278,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845F152021EE4BDF00E7B4E5 /* UserJobsTableTableViewController.swift in Sources */,
 				84F1449D21C15FA90032DD4F /* ViewController.swift in Sources */,
 				845F151C21ECFD9900E7B4E5 /* UserFormTableViewController.swift in Sources */,
 				84CB486721E4F20700B4A12C /* GPS.swift in Sources */,

@@ -18,7 +18,12 @@ class UserMapViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager = CLLocationManager()
     
-
+    @IBAction func seeRequestsButtonTapped(_ sender: UIBarButtonItem) {
+        
+        performSegue(withIdentifier: "MapToRequests", sender: nil)
+    }
+    
+    
     @IBAction func selectLocationButtonTapped(_ sender: UIBarButtonItem) {
 
         performSegue(withIdentifier: "UserMapToForm", sender: nil)

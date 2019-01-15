@@ -154,6 +154,34 @@
             </objects>
             <point key="canvasLocation" x="3327" y="-276"/>
         </scene>
+        <!--User Jobs Table Table View Controller-->
+        <scene sceneID="ead-aM-EBH">
+            <objects>
+                <tableViewController id="Kti-Ud-8Uq" customClass="UserJobsTableTableViewController" customModule="SnowPlow" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ayy-Ve-S1O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="V0m-yj-t3L">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V0m-yj-t3L" id="Vpc-ZZ-ZHy">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Kti-Ud-8Uq" id="UB4-f0-lfY"/>
+                            <outlet property="delegate" destination="Kti-Ud-8Uq" id="jkl-QZ-wVE"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zmy-4J-ycQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5623" y="-1370"/>
+        </scene>
         <!--User Map View Controller-->
         <scene sceneID="323-jq-wN8">
             <objects>
@@ -165,6 +193,11 @@
                         <viewLayoutGuide key="safeArea" id="V4I-7C-Vok"/>
                     </view>
                     <navigationItem key="navigationItem" id="DlO-xN-alW">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="organize" id="Fd2-Re-2gT">
+                            <connections>
+                                <action selector="seeRequestsButtonTapped:" destination="kXI-pO-cvw" id="yF1-oC-TkH"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Select Location" id="fgK-J2-zam">
                             <connections>
                                 <action selector="selectLocationButtonTapped:" destination="kXI-pO-cvw" id="JZ6-AW-l1q"/>
@@ -174,6 +207,7 @@
                     <connections>
                         <outlet property="mapView" destination="FNA-u4-P7m" id="YlM-pI-MyJ"/>
                         <segue destination="yaT-nl-oZ1" kind="show" identifier="UserMapToForm" id="lfz-hz-nCi"/>
+                        <segue destination="Kti-Ud-8Uq" kind="show" identifier="MapToRequests" id="tDB-sg-4Ny"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJY-Gi-iN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -336,11 +370,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6el-eT-Qzi">
-                                <rect key="frame" x="-12.5" y="133.5" width="400" height="400"/>
+                                <rect key="frame" x="50" y="183.5" width="275" height="300"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="Wnb-Mu-ZTA"/>
-                                    <constraint firstAttribute="width" constant="400" id="xha-eM-zgX"/>
+                                    <constraint firstAttribute="height" constant="300" id="wgl-Pa-TDp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="Mark as Completed">
@@ -354,7 +387,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6el-eT-Qzi" firstAttribute="centerY" secondItem="jq6-eI-DyG" secondAttribute="centerY" id="B9P-Qc-GD9"/>
+                            <constraint firstItem="6el-eT-Qzi" firstAttribute="leading" secondItem="rvg-sC-vLa" secondAttribute="leading" constant="50" id="K7R-Hg-UeE"/>
                             <constraint firstItem="6el-eT-Qzi" firstAttribute="centerX" secondItem="jq6-eI-DyG" secondAttribute="centerX" id="dty-AY-f2L"/>
+                            <constraint firstItem="rvg-sC-vLa" firstAttribute="trailing" secondItem="6el-eT-Qzi" secondAttribute="trailing" constant="50" id="nSm-FP-0CB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rvg-sC-vLa"/>
                     </view>
@@ -369,6 +404,7 @@
         <!--Navigation Controller-->
         <scene sceneID="g27-gK-6PR">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IYz-ll-JM1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I3G-1I-c2M" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SWv-jT-GwM">
@@ -380,7 +416,6 @@
                         <segue destination="kXI-pO-cvw" kind="relationship" relationship="rootViewController" id="Hg2-4j-QZl"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IYz-ll-JM1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4684" y="-614.84257871064472"/>
         </scene>

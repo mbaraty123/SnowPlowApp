@@ -40,6 +40,7 @@ class PlowMapViewController: UIViewController, CLLocationManagerDelegate {
         marker.title = "\(title) approx. sq. ft."
         marker.snippet = "$\(price)"
         marker.map = mapView
+        marker.infoWindowAnchor = CGPoint(x: 0.5, y: 0.2)
         }
     
     
