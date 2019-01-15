@@ -12,10 +12,7 @@ import Parse
 class UserMapViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet fileprivate weak var mapView: GMSMapView!
-
     var marker = GMSMarker()
-
-    
     var locationManager = CLLocationManager()
     
     @IBAction func seeRequestsButtonTapped(_ sender: UIBarButtonItem) {
@@ -26,6 +23,10 @@ class UserMapViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func selectLocationButtonTapped(_ sender: UIBarButtonItem) {
 
+        global.setLocation(location: marker.position)
+        print(global.jobLocation)
+        
+        
         performSegue(withIdentifier: "UserMapToForm", sender: nil)
                 print("button worked")
     }
@@ -45,9 +46,8 @@ class UserMapViewController: UIViewController, CLLocationManagerDelegate {
         marker.map = mapView
         marker.isDraggable = true
         marker.icon = UIImage(named: "userMarkerIcon")
-        //Flags().createFlag(payment: 20.98, size: 400.2)
-        //let flagList = Flags().receiveFlags()
-        //print(flagList)
+        
+        
     }
    // let markerPos = marker.position
     

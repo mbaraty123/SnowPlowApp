@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="bck-F5-UM0" customClass="ViewInfoWindow" customModule="SnowPlow" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$SIZE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifK-xW-fhj">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzo-E3-jOy">
+                    <rect key="frame" x="60" y="18" width="40" height="27"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="Accept"/>
+                    <connections>
+                        <action selector="acceptButtonTapped:" destination="bck-F5-UM0" eventType="touchUpInside" id="Lht-V8-JwB"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAh-NV-qlz">
+                    <rect key="frame" x="59" y="0.0" width="27" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$AMOUNT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmC-wM-fVQ">
+                    <rect key="frame" x="0.0" y="27" width="57" height="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="ifK-xW-fhj" firstAttribute="trailing" secondItem="Upw-nK-Rc4" secondAttribute="trailing" id="5Iy-du-Zda"/>
+                <constraint firstItem="ifK-xW-fhj" firstAttribute="leading" secondItem="Upw-nK-Rc4" secondAttribute="leading" id="7Ge-tY-Nwc"/>
+                <constraint firstItem="Upw-nK-Rc4" firstAttribute="bottom" secondItem="mzo-E3-jOy" secondAttribute="bottom" constant="5" id="CrJ-f3-W4B"/>
+                <constraint firstItem="mzo-E3-jOy" firstAttribute="leading" secondItem="bmC-wM-fVQ" secondAttribute="trailing" constant="3" id="S7u-sO-3V4"/>
+                <constraint firstItem="bmC-wM-fVQ" firstAttribute="leading" secondItem="Upw-nK-Rc4" secondAttribute="leading" id="ZlA-r8-lRB"/>
+                <constraint firstItem="mzo-E3-jOy" firstAttribute="top" secondItem="ifK-xW-fhj" secondAttribute="bottom" id="anb-hK-auE"/>
+                <constraint firstItem="ifK-xW-fhj" firstAttribute="top" secondItem="Upw-nK-Rc4" secondAttribute="top" id="gcm-0u-eDP"/>
+                <constraint firstItem="mzo-E3-jOy" firstAttribute="top" secondItem="ifK-xW-fhj" secondAttribute="bottom" id="lIE-rp-tqw"/>
+                <constraint firstItem="mzo-E3-jOy" firstAttribute="trailing" secondItem="Upw-nK-Rc4" secondAttribute="trailing" id="osT-OV-5QQ"/>
+                <constraint firstItem="bmC-wM-fVQ" firstAttribute="top" secondItem="ifK-xW-fhj" secondAttribute="bottom" constant="9" id="rVp-r7-pcO"/>
+                <constraint firstItem="mzo-E3-jOy" firstAttribute="leading" secondItem="bmC-wM-fVQ" secondAttribute="trailing" constant="3" id="tJm-TV-2QY"/>
+                <constraint firstItem="Upw-nK-Rc4" firstAttribute="bottom" secondItem="bmC-wM-fVQ" secondAttribute="bottom" constant="9" id="xQc-YD-3Hv"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Upw-nK-Rc4"/>
+            <connections>
+                <outlet property="acceptButton" destination="mzo-E3-jOy" id="uxJ-0s-s4u"/>
+                <outlet property="amountLabel" destination="bmC-wM-fVQ" id="14e-lS-FKs"/>
+                <outlet property="idLabel" destination="cAh-NV-qlz" id="EaQ-PK-UPw"/>
+                <outlet property="sizeLabel" destination="ifK-xW-fhj" id="z6V-Ep-Z1Y"/>
+            </connections>
+            <point key="canvasLocation" x="51.200000000000003" y="128.63568215892056"/>
+        </view>
+    </objects>
+</document>

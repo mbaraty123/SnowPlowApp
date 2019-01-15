@@ -30,6 +30,7 @@ class UserFormTableViewController: UITableViewController {
         
         Flags().createFlag(payment: NSString(string: amount!).doubleValue, size: NSString(string: size!).doubleValue, location: (CLLocationManager().location?.coordinate)!)
         print("sent to server")
+        print(global.myFlags)
     }
     
     

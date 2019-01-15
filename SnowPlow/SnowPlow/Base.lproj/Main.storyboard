@@ -355,6 +355,7 @@
                     <navigationItem key="navigationItem" id="VTL-yL-OES"/>
                     <connections>
                         <outlet property="mapView" destination="61b-Ns-Icm" id="0lV-NF-EhK"/>
+                        <segue destination="5qV-Pw-uhF" kind="show" id="zfW-l0-jhk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zxO-Hv-yzP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -404,7 +405,6 @@
         <!--Navigation Controller-->
         <scene sceneID="g27-gK-6PR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IYz-ll-JM1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I3G-1I-c2M" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SWv-jT-GwM">
@@ -416,6 +416,7 @@
                         <segue destination="kXI-pO-cvw" kind="relationship" relationship="rootViewController" id="Hg2-4j-QZl"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IYz-ll-JM1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4684" y="-614.84257871064472"/>
         </scene>

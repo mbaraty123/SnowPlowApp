@@ -8,6 +8,8 @@
 import Foundation
 import Parse
 
+var global = Global()
+
 class Flags: NSObject {
     
     var flagList: Array = [Dictionary<String, PFGeoPoint>]()
@@ -25,6 +27,7 @@ class Flags: NSObject {
         // Saves the new object.
         do{
             try myFlag.save()
+            global.addFlag(ObjectId: myFlag.objectId!)
         } catch {
             print("error!")
             //need to add more than this later
@@ -93,6 +96,20 @@ class Flags: NSObject {
         }
     }
     
+    func checkStatus(ObjId: String) -> Dictionary<Bool, Bool>{
+        let query = PFQuery(className: "Flags")
+        var results: Dictionary<Bool, Bool> = [false: false]
+        do{
+            let object = try query.getObjectWithId(ObjId)
+            let completed = object["complete"]
+            let accepted = object["accepted"]
+            results = [accepted as! Bool: completed as! Bool]
+        } catch{
+            print("error! CheckCompletion")
+        }
+        return results
+    }
     
+
     
 }

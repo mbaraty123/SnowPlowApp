@@ -15,9 +15,15 @@ class PlowMapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet fileprivate weak var mapView: GMSMapView!
 
     var locationManager = CLLocationManager()
+    var tappedMarker : GMSMarker?
+    var customInfoWindow : ViewInfoWindow?
     
         override func viewDidLoad() {
             super.viewDidLoad()
+            
+            self.tappedMarker = GMSMarker()
+            self.customInfoWindow = ViewInfoWindow().loadView()
+            
             let userLat = locationManager.location?.coordinate.latitude
             let userLong = locationManager.location?.coordinate.longitude
             let camera = GMSCameraPosition.camera(withLatitude: userLat ?? 42.581343, longitude: userLong ?? -70.952681 , zoom: 14)
@@ -32,9 +38,8 @@ class PlowMapViewController: UIViewController, CLLocationManagerDelegate {
             //print(flagList)
         }
     
-    
-    
-    func showMarker(position: CLLocationCoordinate2D, title: Double, price: Double){
+    func showMarker(position: CLLocationCoordinate2D, title: Double, price: Double, id: String){
+        
         let marker = GMSMarker()
         marker.position = position
         marker.title = "\(title) approx. sq. ft."
@@ -58,7 +63,7 @@ class PlowMapViewController: UIViewController, CLLocationManagerDelegate {
                 do{
                     let object = try query.getObjectWithId(item)
                     if (object["accepted"] as! Bool == false) {
-                    showMarker(position: coord, title: object["Size"] as! Double, price: object["Payment"] as! Double)
+                        showMarker(position: coord, title: object["Size"] as! Double, price: object["Payment"] as! Double, id: object.objectId!)
                     }
                 } catch {
                     print("error!")
@@ -71,6 +76,15 @@ class PlowMapViewController: UIViewController, CLLocationManagerDelegate {
         }
         print("Complete!")
     }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        return false
+    }
+    
+    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
+        return self.customInfoWindow
+    }
+    
 }
 
     extension PlowMapViewController: GMSMapViewDelegate{
@@ -86,9 +100,5 @@ class PlowMapViewController: UIViewController, CLLocationManagerDelegate {
             print("didEndDragging")
         }
         
-        func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D){
-            let marker = GMSMarker()
-            marker.position = coordinate
-            
-        }
+        
 }
