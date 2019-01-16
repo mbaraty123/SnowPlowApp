@@ -19,7 +19,7 @@ class MarkAsCompletedViewController: UIViewController {
         super.viewDidLoad()
         Flags().markAsAccepted(objid: global.objIDJob)
         
-        completedButton.layer.cornerRadius = 120
+        completedButton.layer.cornerRadius = 80
         
 
         // Do any additional setup after loading the view.

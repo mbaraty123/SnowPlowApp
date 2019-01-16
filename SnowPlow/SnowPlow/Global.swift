@@ -32,7 +32,7 @@ class Global: NSObject, NSCoding {
     
     required convenience init?(coder aDecoder: NSCoder) {
         
-        guard let id = aDecoder.decodeObject(forKey: PropertyKey.id) as? String
+        guard (aDecoder.decodeObject(forKey: PropertyKey.id) as? String) != nil
             else {
                 return nil
         }

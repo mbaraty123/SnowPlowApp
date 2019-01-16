@@ -28,7 +28,7 @@ class UserFormTableViewController: UITableViewController {
       let size = sizeTextField.text
         let amount = amountTextField.text
         
-        Flags().createFlag(payment: NSString(string: amount!).doubleValue, size: NSString(string: size!).doubleValue, location: (CLLocationManager().location?.coordinate)!)
+        Flags().createFlag(payment: NSString(string: amount!).doubleValue, size: NSString(string: size!).doubleValue, location: global.jobLocation)
         print("sent to server")
         print(global.myFlags)
     }

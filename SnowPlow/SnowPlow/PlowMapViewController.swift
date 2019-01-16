@@ -80,6 +80,16 @@ class PlowMapViewController: UIViewController, CLLocationManagerDelegate, GMSMap
 
 extension PlowMapViewController {
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        
+        var webHook = "https://www.google.com/maps/search/?api=1&query="
+        webHook.append(contentsOf: "\(marker.position.latitude),\(marker.position.longitude)")
+        
+        let mapsURL = NSURL(string: webHook)
+        
+        if UIApplication.shared.canOpenURL(mapsURL! as URL) {
+            UIApplication.shared.open(mapsURL! as URL, options: [:], completionHandler: nil)
+        } 
+        
         print("info window was tapped")
         global.setObjIDJob(id: marker.snippet!)
         performSegue(withIdentifier: "PlowMapToComplete", sender: nil)
