@@ -22,11 +22,11 @@ class Global: NSObject, NSCoding {
     static let DocumentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("IDs")
     
-    static func loadFromFile() -> [String]?  {
+    func loadFromFile() -> [String]?  {
         return NSKeyedUnarchiver.unarchiveObject(withFile: Global.ArchiveURL.path) as? [String]
     }
     
-    static func saveToFile(flags: [String]) {
+    func saveToFile(flags: [String]) {
         NSKeyedArchiver.archiveRootObject(flags, toFile: Global.ArchiveURL.path)
     }
     
@@ -47,7 +47,9 @@ class Global: NSObject, NSCoding {
 
     
     func addFlag(ObjectId: String){
-        self.myFlags.append(ObjectId)
+        var ids = loadFromFile()
+        ids?.append(ObjectId)
+        saveToFile(flags: ids!)
     }
     
     func checkFlags() -> [Dictionary<Bool, Bool>]{

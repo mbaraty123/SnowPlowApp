@@ -10,9 +10,11 @@ import UIKit
 
 class UserJobsTableTableViewController: UITableViewController {
 
+    var jobList: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        jobList = Global().loadFromFile() ?? []
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -30,21 +32,21 @@ class UserJobsTableTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         
-        return global.myFlags.count
+        return jobList.count
     }
 
     
-   /* override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EmojiCell", for: indexPath) as! EmojiTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Job", for: indexPath) as! UserRequestsTableViewCell
         
-        let emoji = emojis[indexPath.row]
+        let id = jobList[indexPath.row]
         
-        cell.update(with: emoji)
+        cell.update(with: id)
         cell.showsReorderControl = true
         return cell
     }
- */
+ 
 
     /*
     // Override to support conditional editing of the table view.

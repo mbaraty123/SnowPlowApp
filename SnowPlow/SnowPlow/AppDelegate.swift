@@ -15,7 +15,7 @@ import GooglePlaces
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+   
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let configuration = ParseClientConfiguration {
@@ -29,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSPlacesClient.provideAPIKey("AIzaSyD39-LxDgG2UrWdEU3DvTIcD8TPH-Eb328")
         
         print()
+        
+        
         
         
         return true
