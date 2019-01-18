@@ -24,6 +24,7 @@ class UserFormTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    //submits a flag with the given details to the parse server
     @IBAction func submitButtonTapped(_ sender: UIButton) {
       let size = sizeTextField.text
         let amount = amountTextField.text

@@ -22,6 +22,7 @@ class SelectorViewController: UIViewController, CLLocationManagerDelegate {
         plowOptionButton.layer.cornerRadius = 60
         // Do any additional setup after loading the view.
         
+        //requests location access from user
         if CLLocationManager.locationServicesEnabled() == true {
             if CLLocationManager.authorizationStatus() == .restricted || CLLocationManager.authorizationStatus() == .denied || CLLocationManager.authorizationStatus() == .notDetermined {
                 locationManager.requestWhenInUseAuthorization()
@@ -36,6 +37,7 @@ class SelectorViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    //Log in/out functions borrowed from Back4App Tutorials
     func loadLoginScreen(){
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let logInViewController = storyBoard.instantiateViewController(withIdentifier: "LogInViewController") as! LogInViewController

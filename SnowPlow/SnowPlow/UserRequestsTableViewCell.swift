@@ -24,6 +24,7 @@ class UserRequestsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    //Updates the cells with ObjectID and Job Status. 
     func update(with id: String) {
         objID.text = id
         

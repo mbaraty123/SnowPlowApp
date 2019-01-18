@@ -14,6 +14,7 @@ class Flags: NSObject {
     
     var flagList: Array = [Dictionary<String, PFGeoPoint>]()
     
+    //creates a new flag and sends it to the Parse server
     func createFlag(payment: Double, size: Double, location: CLLocationCoordinate2D){
         let myFlag = PFObject(className: "Flags")
         
@@ -34,6 +35,7 @@ class Flags: NSObject {
         }
     }
     
+    //recieves all parse objects from server then returns an array of dictionary objects containing the ObjectID and its assigned PFGeoPoint object
     func receiveFlags() -> [Dictionary<String, PFGeoPoint>]{
         print("Called receiveFlags")
         let query = PFQuery(className: "Flags")
@@ -47,8 +49,6 @@ class Flags: NSObject {
                 
                 print(self.flagList)
                 print("Printed flagList")
-                //WHY THE HELL DOES FLAGLIST EXIST HERE, BUT CLEARS ITSELF WHEN RETURNED????
-                //Everything else works, GPS class needs rework.
             }
             
         } catch {
@@ -58,7 +58,7 @@ class Flags: NSObject {
         return flagList
     }
     
-    
+    //Marks the flag with the given ObjectID as completed
     func markAsComplete(objid: String) {
         let query = PFQuery(className: "Flags")
         
@@ -77,6 +77,7 @@ class Flags: NSObject {
         }
     }
     
+    //Marks the flag with the given ObjectID as accepted
     func markAsAccepted(objid: String) {
         let query = PFQuery(className: "Flags")
         
@@ -96,6 +97,8 @@ class Flags: NSObject {
         }
     }
     
+    //Returns the status of the flag with the given ObjectID in the form of a Dictionary object
+    //Order of booleans in Dictionary object is [Accepted:Completed]
     func checkStatus(ObjId: String) -> Dictionary<Bool, Bool>{
         let query = PFQuery(className: "Flags")
         var results: Dictionary<Bool, Bool> = [false: false]

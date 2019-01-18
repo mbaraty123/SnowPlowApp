@@ -1,5 +1,6 @@
 # Snow Plow App
 ### By Michael Baraty and Kyle Hannibal
+#### Open in XCode 10.1
 
 Breakdown:
 	Frontend:
@@ -36,7 +37,3 @@ Stretch Goals:
 	- Rating users both ways
 	- Tips
 	- Allowing plow-user to add extra information about clients, such as shape of driveway
-
-
-
-

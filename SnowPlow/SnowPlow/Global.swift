@@ -15,6 +15,8 @@ class Global: NSObject, NSCoding {
     var myFlags: [String] = []
     var objIDJob: String = ""
     
+    
+    //Everything up to line 48 is dedicated to long term memory
     struct PropertyKey {
         static let id = "ID"
     }
@@ -47,9 +49,11 @@ class Global: NSObject, NSCoding {
 
     
     func addFlag(ObjectId: String){
-        var ids = loadFromFile()
-        ids?.append(ObjectId)
-        saveToFile(flags: ids!)
+        print("Add flag \(ObjectId)")
+        var ids = loadFromFile()!
+        ids.append(ObjectId)
+        print(ids)
+        saveToFile(flags: ids)
     }
     
     func checkFlags() -> [Dictionary<Bool, Bool>]{

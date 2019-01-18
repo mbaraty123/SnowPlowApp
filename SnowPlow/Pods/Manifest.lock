@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.8.0)
   - Bolts/Tasks (1.9.0)
   - GoogleMaps (2.7.0):
     - GoogleMaps/Maps (= 2.7.0)
@@ -13,23 +14,26 @@ PODS:
     - Bolts/Tasks (~> 1.9)
 
 DEPENDENCIES:
+  - Alamofire
   - GoogleMaps
   - GooglePlaces
   - Parse
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - Bolts
     - GoogleMaps
     - GooglePlaces
     - Parse
 
 SPEC CHECKSUMS:
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   Parse: 3b31a3dd1777b07ee7f0caee32fafbff544483a5
 
-PODFILE CHECKSUM: 84dda5758c8c802da856c745f6070abca0198b71
+PODFILE CHECKSUM: c09385813dc2ae1e0ef5c7341b023e440a6b084a
 
 COCOAPODS: 1.5.3

@@ -19,14 +19,11 @@
 		848ED37221C1ED3400BEE124 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848ED37121C1ED3400BEE124 /* LogInViewController.swift */; };
 		848ED37421C209C000BEE124 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848ED37321C209C000BEE124 /* Extensions.swift */; };
 		848ED37621C25CE600BEE124 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848ED37521C25CE600BEE124 /* Job.swift */; };
-		84BD40D321EE5BC000F9D670 /* ViewInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BD40D221EE5BC000F9D670 /* ViewInfoWindow.xib */; };
-		84BD40D721EE5D4E00F9D670 /* ViewInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD40D621EE5D4E00F9D670 /* ViewInfoWindow.swift */; };
 		84BD40D921EE5F8B00F9D670 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD40D821EE5F8B00F9D670 /* Global.swift */; };
 		84BD40DB21EFD88000F9D670 /* UserRequestsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD40DA21EFD88000F9D670 /* UserRequestsTableViewCell.swift */; };
 		84C0A87321C2CFA20002F47C /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0A87221C2CFA20002F47C /* Flags.swift */; };
 		84CB486721E4F20700B4A12C /* GPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB486621E4F20700B4A12C /* GPS.swift */; };
 		84F1449B21C15FA90032DD4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1449A21C15FA90032DD4F /* AppDelegate.swift */; };
-		84F1449D21C15FA90032DD4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1449C21C15FA90032DD4F /* ViewController.swift */; };
 		84F144A021C15FA90032DD4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F1449E21C15FA90032DD4F /* Main.storyboard */; };
 		84F144A221C15FAB0032DD4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F144A121C15FAB0032DD4F /* Assets.xcassets */; };
 		84F144A521C15FAB0032DD4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F144A321C15FAB0032DD4F /* LaunchScreen.storyboard */; };
@@ -44,15 +41,12 @@
 		848ED37121C1ED3400BEE124 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		848ED37321C209C000BEE124 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		848ED37521C25CE600BEE124 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
-		84BD40D221EE5BC000F9D670 /* ViewInfoWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewInfoWindow.xib; sourceTree = "<group>"; };
-		84BD40D621EE5D4E00F9D670 /* ViewInfoWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewInfoWindow.swift; sourceTree = "<group>"; };
 		84BD40D821EE5F8B00F9D670 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		84BD40DA21EFD88000F9D670 /* UserRequestsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequestsTableViewCell.swift; sourceTree = "<group>"; };
 		84C0A87221C2CFA20002F47C /* Flags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flags.swift; sourceTree = "<group>"; };
 		84CB486621E4F20700B4A12C /* GPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPS.swift; sourceTree = "<group>"; };
 		84F1449721C15FA90032DD4F /* SnowPlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnowPlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F1449A21C15FA90032DD4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84F1449C21C15FA90032DD4F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84F1449F21C15FA90032DD4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84F144A121C15FAB0032DD4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = SnowPlow/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		84F144A421C15FAB0032DD4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -109,9 +103,6 @@
 				845F151721EA207900E7B4E5 /* Style.json */,
 				84F1449A21C15FA90032DD4F /* AppDelegate.swift */,
 				845F151B21ECFD9800E7B4E5 /* UserFormTableViewController.swift */,
-				84F1449C21C15FA90032DD4F /* ViewController.swift */,
-				84BD40D221EE5BC000F9D670 /* ViewInfoWindow.xib */,
-				84BD40D621EE5D4E00F9D670 /* ViewInfoWindow.swift */,
 				84C0A87221C2CFA20002F47C /* Flags.swift */,
 				845F151F21EE4BDF00E7B4E5 /* UserJobsTableTableViewController.swift */,
 				84CB486621E4F20700B4A12C /* GPS.swift */,
@@ -210,7 +201,6 @@
 				84F144A221C15FAB0032DD4F /* Assets.xcassets in Resources */,
 				84F144A021C15FA90032DD4F /* Main.storyboard in Resources */,
 				845F151821EA207900E7B4E5 /* Style.json in Resources */,
-				84BD40D321EE5BC000F9D670 /* ViewInfoWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +238,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SnowPlow/Pods-SnowPlow-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 			);
@@ -255,6 +246,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 			);
@@ -295,7 +287,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				845F152021EE4BDF00E7B4E5 /* UserJobsTableTableViewController.swift in Sources */,
-				84F1449D21C15FA90032DD4F /* ViewController.swift in Sources */,
 				845F151C21ECFD9900E7B4E5 /* UserFormTableViewController.swift in Sources */,
 				84CB486721E4F20700B4A12C /* GPS.swift in Sources */,
 				848ED36221C1742700BEE124 /* SelectorViewController.swift in Sources */,
@@ -308,7 +299,6 @@
 				848ED37421C209C000BEE124 /* Extensions.swift in Sources */,
 				845F151E21ED5FD200E7B4E5 /* MarkAsCompletedViewController.swift in Sources */,
 				84C0A87321C2CFA20002F47C /* Flags.swift in Sources */,
-				84BD40D721EE5D4E00F9D670 /* ViewInfoWindow.swift in Sources */,
 				848ED37621C25CE600BEE124 /* Job.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

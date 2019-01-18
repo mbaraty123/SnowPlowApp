@@ -3,6 +3,8 @@
 //  SnowPlow
 //
 //  Created by Michael Baraty on 12/12/18.
+//  This class was borrowed from the Back4App tutorial on log in screens
+//  We did not put too much effort into a better log in system because there was not enough time
 //  Copyright © 2018 Baraty Hannibal Enterprises. All rights reserved.
 //
 
@@ -39,6 +41,7 @@ class LogInViewController: UIViewController {
             UIViewController.removeSpinner(spinner: sv)
             if user != nil {
                 self.loadHomeScreen()
+                Global().saveToFile(flags: [])
             }else{
                 if let descrip = error?.localizedDescription{
                     self.displayErrorMessage(message: (descrip))

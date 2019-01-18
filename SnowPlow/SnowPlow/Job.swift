@@ -2,6 +2,7 @@
 //  Job.swift
 //  SnowPlow
 //
+//  This class was used to map out the process of 
 //  Created by Michael Baraty on 12/13/18.
 //  Copyright © 2018 Baraty Hannibal Enterprises. All rights reserved.
 //

@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        //initializes connection to Parse server
         let configuration = ParseClientConfiguration {
             $0.applicationId = "5dk8bUzERsDwVyyZBZtjUK2OAsf5ZmeS6c3xZsqQ"
             $0.clientKey = "BEggk8pqPkvG5r6IaSrvYURMiZZp7pVJxW51zjTb"
@@ -25,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         Parse.initialize(with: configuration)
         
+        //Adds our API key to the google map utilities
         GMSServices.provideAPIKey("AIzaSyD39-LxDgG2UrWdEU3DvTIcD8TPH-Eb328")
         GMSPlacesClient.provideAPIKey("AIzaSyD39-LxDgG2UrWdEU3DvTIcD8TPH-Eb328")
         

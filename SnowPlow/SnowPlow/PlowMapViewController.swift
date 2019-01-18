@@ -20,7 +20,7 @@ class PlowMapViewController: UIViewController, CLLocationManagerDelegate, GMSMap
             super.viewDidLoad()
             
             mapView.delegate = self
-            
+            //Initializes the map
             let userLat = locationManager.location?.coordinate.latitude
             let userLong = locationManager.location?.coordinate.longitude
             let camera = GMSCameraPosition.camera(withLatitude: userLat ?? 42.581343, longitude: userLong ?? -70.952681 , zoom: 14)
@@ -34,9 +34,11 @@ class PlowMapViewController: UIViewController, CLLocationManagerDelegate, GMSMap
         }
     
     func updateUI() {
+        //Shows the markers
         showMarkers()
     }
     
+    //Shows an individual marker
     func showMarker(position: CLLocationCoordinate2D, title: Double, price: Double, id: String){
         
         let marker = GMSMarker()
@@ -47,7 +49,7 @@ class PlowMapViewController: UIViewController, CLLocationManagerDelegate, GMSMap
         marker.infoWindowAnchor = CGPoint(x: 0.5, y: 0.2)
         }
     
-    
+    //Shows all the markers that were not accepted on the server
     func showMarkers() {
         let flagList = Flags().receiveFlags()
         print(flagList)
@@ -78,6 +80,7 @@ class PlowMapViewController: UIViewController, CLLocationManagerDelegate, GMSMap
     
 }
 
+//Extension borrowed from Google Maps tutorial to redirecct drivers from the info windot to Google Maps and then to the MarkAsCompleted view controller
 extension PlowMapViewController {
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
         
